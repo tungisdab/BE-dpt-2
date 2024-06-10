@@ -93,7 +93,7 @@ def read_files_in_directory(directory):
 
 directory_path = r'E:\codeKHANH\video_recognition\Video_Recognition2\dataset'
 # read_files_in_directory(directory_path) #trích xuất đặc trưng
-# read_video('v22_animal.mp4',r'dataset\cats\cats\v2_cat.mp4', max_kpt = 1000, frame_skip = 24)
+read_video('v22_animal.mp4',r'dataset\cats\cats\v2_cat.mp4', max_kpt = 1000, frame_skip = 24)
 
 #################### STAGE 2 ############################
 
@@ -119,7 +119,7 @@ def resize_image(image, width, height):
 
     # Đặt ảnh đã resize vào giữa ảnh nền
     result_image[y_offset:y_offset + new_h, x_offset:x_offset + new_w] = resized_image
-    cv2.imwrite("a3.jpg", result_image)
+    cv2.imwrite("resized_image.jpg", result_image)
     return result_image
 
 
@@ -165,8 +165,8 @@ def find_similar_videos(query_image, directory, k=3):
     return top_3_videos
 
 # Đường dẫn đến các video và ảnh đầu vào
-directory_feature = r'E:\codeKHANH\video_recognition\Video_Recognition2\feature_new'
-query_image = cv2.imread(r'E:\codeKHANH\video_recognition\Video_Recognition2\input_images\cat\00.jpg')
+directory_feature = r'E:\codeKHANH\video_recognition\API2\feature_new'
+query_image = cv2.imread(r'E:\codeKHANH\video_recognition\API2\input_images\cat\00.jpg')
 # query_image = cv2.imread(r'img test\1.jpg')
 
 # # Hiển thị ảnh sau khi cắt

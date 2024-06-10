@@ -18,7 +18,6 @@
 
     │ └── input_images
 
-
     │ └── app.py
 
     │ └── README.md
