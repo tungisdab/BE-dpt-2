@@ -15,9 +15,9 @@ CORS(app)  # Cho phép tất cả các nguồn
 
 def extract_surf_features(frame, max_kpt):
     # Khởi tạo bộ trích xuất đặc trưng SURF
-    sirf = cv2.SIFT_create(nfeatures=max_kpt)
+    sift = cv2.SIFT_create(nfeatures=max_kpt)
     # Tìm key points và descriptors của ảnh
-    keypoints, descriptors = sirf.detectAndCompute(frame, None)
+    keypoints, descriptors = sift.detectAndCompute(frame, None)
     print(descriptors.shape)
     #Nếu đặc trưng là None
     if descriptors is None:
