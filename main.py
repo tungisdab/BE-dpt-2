@@ -93,7 +93,7 @@ def read_files_in_directory(directory):
 
 directory_path = r'E:\codeKHANH\video_recognition\Video_Recognition2\dataset'
 # read_files_in_directory(directory_path) #trích xuất đặc trưng
-read_video('v22_animal.mp4',r'dataset\cats\cats\v2_cat.mp4', max_kpt = 1000, frame_skip = 24)
+# read_video('v22_animal.mp4',r'dataset\cats\cats\v2_cat.mp4', max_kpt = 1000, frame_skip = 24)
 
 #################### STAGE 2 ############################
 
@@ -166,7 +166,7 @@ def find_similar_videos(query_image, directory, k=3):
 
 # Đường dẫn đến các video và ảnh đầu vào
 directory_feature = r'E:\codeKHANH\video_recognition\API2\feature_new'
-query_image = cv2.imread(r'E:\codeKHANH\video_recognition\API2\input_images\cat\00.jpg')
+query_image = cv2.imread(r'E:\codeKHANH\video_recognition\API2\input_images\cat\japan.jpg')
 # query_image = cv2.imread(r'img test\1.jpg')
 
 # # Hiển thị ảnh sau khi cắt

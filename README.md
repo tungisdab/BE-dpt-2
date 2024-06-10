@@ -20,4 +20,8 @@
 
     │ └── app.py
 
+    │ └── main.py
+
     │ └── README.md
+
+    │ └── resized_image.jpg
