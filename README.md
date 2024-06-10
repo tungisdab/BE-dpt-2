@@ -18,6 +18,8 @@
 
     │ └── input_images
 
+    │ └── .gitignore
+
     │ └── app.py
 
     │ └── main.py
