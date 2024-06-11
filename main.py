@@ -134,6 +134,18 @@ def cosine_similarity(A, B):
     similarity = dot_product / (norm_A * norm_B)
     return similarity
 
+def save_img_with_kpt(query_image):
+    #tiền xử lý ảnh video theo chiều dài/ rộng cố định
+    img_cropped = resize_image(query_image, 1280, 720)
+    #trích xuất đặc trưng của ảnh đầu vào
+    kpt, feature_img = extract_surf_features(img_cropped, max_kpt=1000)
+    # Vẽ các keypoints lên ảnh
+    frame_with_keypoints = cv2.drawKeypoints(img_cropped, kpt, None)
+    # Hiển thị ảnh đã được vẽ keypoints
+    # cv2.imshow('Ảnh đã được vẽ keypoint', frame_with_keypoints)
+    # Lưu ảnh đã vẽ keypoints ra file
+    cv2.imwrite('keypoints_images.jpg', frame_with_keypoints)
+
 def find_similar_videos(query_image, directory, k=3):
     top_videos = []
     #tiền xử lý ảnh video theo chiều dài/ rộng cố định
@@ -166,8 +178,10 @@ def find_similar_videos(query_image, directory, k=3):
 
 # Đường dẫn đến các video và ảnh đầu vào
 directory_feature = r'E:\codeKHANH\video_recognition\API2\feature_new'
-query_image = cv2.imread(r'E:\codeKHANH\video_recognition\API2\input_images\cat\japan.jpg')
+query_image = cv2.imread(r'E:\codeKHANH\video_recognition\API2\input_images\cat\b1.jpg')
 # query_image = cv2.imread(r'img test\1.jpg')
+
+save_img_with_kpt(query_image)
 
 # # Hiển thị ảnh sau khi cắt
 # plt.imshow(cv2.cvtColor(img_cropped, cv2.COLOR_BGR2RGB))
